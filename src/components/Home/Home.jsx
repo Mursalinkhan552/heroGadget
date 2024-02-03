@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImg from ""
+import heroImg from '../../assets/hero.jpg'
 
 const Home = () => {
     return (
@@ -25,7 +25,10 @@ const Home = () => {
                 </div>
 
             </div>
-            <img src="" alt="" />
+            <img
+             src={heroImg} alt=""
+             className='w-5/6 mx-auto mb-12 -mt-12 lg:-mt-40 rounded-lg shadow-md bg-gray-500'
+              />
 
         </section>
     );
