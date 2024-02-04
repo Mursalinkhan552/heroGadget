@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link, useRouteError } from 'react-router-dom';
 
 
 
 
 const ErrorPage = () => {
+    const { error, status } = useRouteError()
+    console.log(error.message, status);
 
     return (
-        <section>
-            <div>
+        <section className='flex items-center h-screen p-16 bg-gray-200 text-gray-900'>
+            <div className='container flex flex-col items-center justify-center px-5 mx-auto py-8'>
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 512 512'
@@ -33,16 +36,21 @@ const ErrorPage = () => {
                         points='383.958 182.63 360.042 161.37 338.671 185.412 314.63 164.042 293.37 187.958 317.412 209.329 296.042 233.37 319.958 254.63 341.329 230.588 365.37 251.958 386.63 228.042 362.588 206.671 383.958 182.63'
                     ></polygon>
                 </svg>
-                <div>
-                    <h2>
-                        <span>Error</span>
+                <div className='text-center max-w-md'>
+                    <h2 className='mb-8 font-extrabold text-9xl text-gray-600'>
+                        <span className='sr-only'>Error</span>{status || 404}
                     </h2>
-                    <p></p>
-                    
+                    <p className='text-2xl font-semibold md:text-3xl mb-8'>
+                        {error.message}
+                    </p>
+                    <Link
+                        to='/'
+                        className='px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900'
+                    >
+                        Back to HomePage
+                    </Link>
                 </div>
             </div>
-
-
         </section>
     );
 };
