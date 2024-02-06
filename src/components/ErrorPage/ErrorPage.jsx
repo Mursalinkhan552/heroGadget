@@ -41,11 +41,11 @@ const ErrorPage = () => {
                         <span className='sr-only'>Error</span>{status || 404}
                     </h2>
                     <p className='text-2xl font-semibold md:text-3xl mb-8'>
-                        {error.message}
+                        {error?.message}
                     </p>
                     <Link
                         to='/'
-                        className='px-8 py-3 font-semibold rounded bg-cyan-200 text-gray-900'
+                        className='px-8 py-3 font-semibold rounded bg-cyan-200 hover:bg-cyan-400 text-gray-900'
                     >
                         Back to HomePage
                     </Link>
