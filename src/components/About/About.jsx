@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -26,6 +27,24 @@ const About = () => {
                         className='w-full p-3 pl-12 text-sm rounded-full sm:w-96 focus:outline-none bg-gray-200 text-gray-800 focus:bg-gray-300'
                     />
                 </div>
+                <div className='flex flex-col w-full divide-y sm:flex-row sm:divide-y-0 sm:divide-x sm:px-8 lg:px-12 xl:px-32 divide-gray-700'>
+                    <div className='flex flex-col w-full divide-y divide-gray-700'>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>Billing</Link>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>Support</Link>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>Account</Link>
+                    </div>
+                    <div className='flex flex-col w-full divide-y divide-gray-700'>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>Features</Link>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>Contact us</Link>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>My orders</Link>
+                    </div>
+                    <div className='flex flex-col w-full divide-y divide-gray-700'>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'> Enterprise</Link>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>Privacy</Link>
+                        <Link className='flex items-center justify-center p-4 sm:py-8 lg:py-12' to='/support'>Developers</Link>
+                    </div>
+                </div>
+
             </div>
         </section>
     );
