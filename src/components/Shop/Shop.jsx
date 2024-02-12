@@ -5,11 +5,11 @@ import { addToDB } from '../../utilities/fakeDB';
 
 const Shop = () => {
     const productData = useLoaderData();
-    console.log(productData);
+    
 
     // Button Handler
     const handleAddToCart = (id) => {
-        console.log(id);
+        
         addToDB(id);
     }
 

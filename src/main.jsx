@@ -7,6 +7,8 @@ import Home from './components/Home/Home'
 import About from './components/About/About'
 import ErrorPage from './components/ErrorPage/ErrorPage'
 import Shop from './components/Shop/Shop'
+import Cart from './components/Cart/Cart'
+import productsAndCartData from './loader/getCart&ProductData'
 
 
 const router = createBrowserRouter([
@@ -22,7 +24,12 @@ const router = createBrowserRouter([
       {
         path: '/shop',
         element: <Shop></Shop>,
-        loader: ()=> fetch('products.json')
+        loader: () => fetch('products.json')
+      },
+      {
+        path: '/cart',
+        element: <Cart></Cart>,
+        loader: productsAndCartData
       },
       {
         path: '/about',
