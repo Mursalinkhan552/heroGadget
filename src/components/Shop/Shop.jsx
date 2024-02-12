@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ProductCard from '../ProductCard/ProductCard';
+import { addToDB } from '../../utilities/fakeDB';
 
 const Shop = () => {
     const productData = useLoaderData();
@@ -9,6 +10,7 @@ const Shop = () => {
     // Button Handler
     const handleAddToCart = (id) => {
         console.log(id);
+        addToDB(id);
     }
 
     return (
