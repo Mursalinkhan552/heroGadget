@@ -1,5 +1,6 @@
 import React from 'react';
 import heroImg from '../../assets/hero.jpg'
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -15,20 +16,24 @@ const Home = () => {
                         Appliances at extremely affordable Price.
                     </p>
                     <div className='flex flex-wrap justify-center'>
-                        <button type='button' className='btn-primary'>
-                            Shop Now
-                        </button>
-                        <button type='button' className='btn-outlined'>
-                            Learn More
-                        </button>
+                        <Link to='/shop'>
+                            <button type='button' className='btn-primary'>
+                                Shop Now
+                            </button>
+                        </Link>
+                        <Link to='/about'>
+                            <button type='button' className='btn-outlined'>
+                                Learn More
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
             </div>
             <img
-             src={heroImg} alt=""
-             className='w-5/6 mx-auto mb-12 -mt-12 lg:-mt-40 rounded-lg shadow-md bg-gray-500'
-              />
+                src={heroImg} alt=""
+                className='w-5/6 mx-auto mb-12 -mt-12 lg:-mt-40 rounded-lg shadow-md bg-gray-500'
+            />
 
         </section>
     );
