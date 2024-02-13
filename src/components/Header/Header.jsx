@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
+import { CartContext } from '../../App';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [cart, setCart] = useContext(CartContext);
+    console.log(cart.length);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+
     return (
         <div className='px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg-px-8'>
             <div className='relative flex items-center justify-between'>
@@ -56,6 +61,7 @@ const Header = () => {
                         >
                             <div className='relative py-3'>
                                 <ShoppingCartIcon className='h-6 w-6 text-cyan-400' />
+                                <p className='absolute top-0 left-6 text-base'>{cart.length}</p>
                             </div>
                         </Link>
                     </li>
@@ -154,14 +160,17 @@ const Header = () => {
                                                     to='/cart'
                                                     aria-label='Cart'
                                                     title='Cart'
-                                                    className='font-medium tracking-wide text-gray-700 transition-colors
-                                                duration-200
-                                                hover:text-deep-purple-accent-400'
+                                                    className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                                 >
                                                     <div className='relative py-3'>
+
                                                         <ShoppingCartIcon className='h-6 w-6 text-cyan-400' />
+                                                        <p className='absolute top-0 left-6 text-base'>{cart.length}</p>
+
                                                     </div>
+
                                                 </Link>
+
                                             </li>
                                             <li>
                                                 <Link
@@ -171,6 +180,7 @@ const Header = () => {
                                                     className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'
                                                 >
                                                     About Us
+
                                                 </Link>
                                             </li>
                                         </ul>
